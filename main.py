@@ -10,7 +10,7 @@ while resp != 'real' and resp != 'inteiro':
     print("Opção inválida. Digite 'real' ou 'inteiro':")
     resp = input().lower()
 
-if resp == 'real':
+if resp == 'real' or 'reais':
     num_set = set()
     num_set.add(0.0)
 elif resp == 'inteiro' or 'inteiros':
@@ -39,10 +39,12 @@ while listaSom < 10:
 
 maior = max(listaAI)
 
-if resp == 'real' or 'reais':
-    print(f"Você escolheu adicionar números reais.")
-else:
-    print(f"Você escolheu adicionar números inteiros.")
+if resp == "real":
+    respn = "reais"
+elif resp == "inteiro":
+    respn = "inteiros"
+
+print(f"você escolheu o conjunto dos números {respn}")
 
 print(f"O maior número é {maior:.1f}" if isinstance(maior, float) else f"O maior número é {int(maior)}")
 
